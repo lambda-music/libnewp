@@ -1,6 +1,6 @@
 
 (if (defined? -DEFINED-LIBNEWP )
-    (abort '(aborted already-defined)))
+    (abort '(aborted already-defined libnewp)))
 
 (define -DEFINED-LIBNEWP #t)
 (define newp-all '())
@@ -10,7 +10,8 @@
   (sleep 1000))
 
 (define (newp-add v)
-  (set! newp-all (xcons newp-all v)))
+  (set! newp-all (xcons newp-all v))
+  v)
 
 ; These identifies are obsolete; they are defined to maintain the backward compatibility.
 (define add-newp newp-add)
